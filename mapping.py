@@ -23,7 +23,7 @@ name=list_array[:,2]
 
 
 #------------csvファイルを表として表示---------------
-st.title("首都土施工物件一覧") # タイトル
+#st.title("首都土施工物件一覧") # タイトル
 def load_data(nrows):
     data = pd.read_csv("list.csv", nrows=nrows)
     lowercase = lambda x: str(x).lower()
@@ -37,27 +37,27 @@ st.write(data)
 
 # ------------------------マッピング作成------------------------
 # サンプル用の緯度経度データを作成する
-sales_office = pd.DataFrame(
-    data=lon_lat,
-    index=name,
-    columns=["x","y"]
-)
-
+#sales_office = pd.DataFrame(
+#    data=lon_lat,
+#    index=name,
+#    columns=["x","y"]
+#)
+#
 # データを地図に渡す関数を作成する
-def AreaMarker(df,m):
-    for index, r in df.iterrows(): 
-
-        # ピンをおく
-        folium.Marker(
-            location=[r.x, r.y],
-            popup=index,
-        ).add_to(m)
-
-       
-
+#def AreaMarker(df,m):
+#    for index, r in df.iterrows(): 
+#
+#        # ピンをおく
+#        folium.Marker(
+#            location=[r.x, r.y],
+#            popup=index,
+#        ).add_to(m)
+#
+#       
+#
 # ------------------------画面作成------------------------
-
-st.title("首都土施工物件マッピング") # タイトル
-m = folium.Map(location=[35.688313,139.77679], zoom_start=7) # 地図の初期設定
-AreaMarker(sales_office,m) # データを地図渡す
-folium_static(m) # 地図情報を表示
+#
+#st.title("首都土施工物件マッピング") # タイトル
+#m = folium.Map(location=[35.688313,139.77679], zoom_start=7) # 地図の初期設定
+#AreaMarker(sales_office,m) # データを地図渡す
+#folium_static(m) # 地図情報を表示
